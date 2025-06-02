@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Nail Diagnosis System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Styles.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Prediction Result</h1>
+        <nav>
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('about')}}">About</a>
+            <a href="{{url_for('nailprediction')}}">Nail Prediction</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Prediction Result</h2>
+            <p>The predicted condition is: <strong>{{ nresult }}</strong></p>
+            <p>Uploaded Image: <strong>{{ filename }}</strong></p>
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Nail Image" style="max-width: 300px;">
+            <br>
+            <a href="{{url_for('nailprediction')}}">Upload Another Image</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Nail Diagnosis System</p>
+    </footer>
+</body>
+</html>
